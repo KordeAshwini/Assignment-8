@@ -1,0 +1,13 @@
+
+<!--<app-child (MessageEvent)="Message=$event"></app-child>
+<app-child [message]="parentMessage"  ></app-child>
+<h1>{{Message}}</h1>-->
+
+<app-child [message]="parentMessage"(messageEvent)="ReceiveMsg($event)"></app-child>
+
+<h4>Inside Parent Component</h4>
+<h1>{{Message}}</h1><!--this will print child msg-->
+<p>Press The Button to send the message to your child</p>
+<button (click)="sendMessage()">SendToChild</button>
+
+<router-outlet></router-outlet>
